@@ -64,10 +64,10 @@ final class Controller: ObservableObject {
         Task {
             let languages = await translator.supportedLanguages()
             let source = chosenSource ?? translator.detect(text)
-            var target = chosenTarget ?? lastTarget ?? source.map(Translator.defaultTarget) ?? Translator.defaultTarget(for: .init(identifier: "en"))
-            if let source, source.minimalIdentifier == target.minimalIdentifier {
-                target = Translator.defaultTarget(for: source)
-            }
+            // English by default; once the user picks a target, that one is remembered.
+            let candidate = chosenTarget ?? lastTarget ?? Locale.Language(identifier: "en")
+            // Same as the source (e.g. English text) → let the user choose.
+            let target = candidate.minimalIdentifier == source?.minimalIdentifier ? nil : candidate
             let show = { (state: ResultView.State) in
                 guard id == self.requestID else { return } // a newer choice wins
                 self.popup.showResult(ResultView(
@@ -77,6 +77,9 @@ final class Controller: ObservableObject {
             }
             guard let source else {
                 return show(.message(String(localized: "Could not detect the language of the text.")))
+            }
+            guard let target else {
+                return show(.message(String(localized: "Choose the language to translate into.")))
             }
             show(.loading)
             show(await translator.translate(text, from: source, to: target))
@@ -96,11 +99,6 @@ final class Translator {
         let recognizer = NLLanguageRecognizer()
         recognizer.processString(text)
         return recognizer.dominantLanguage.map { Locale.Language(identifier: $0.rawValue) }
-    }
-
-    /// Polish → Russian, everything else → Polish.
-    static func defaultTarget(for source: Locale.Language) -> Locale.Language {
-        Locale.Language(identifier: source.languageCode == .polish ? "ru" : "pl")
     }
 
     /// Languages Apple Translation supports, sorted by name.
@@ -242,7 +240,7 @@ struct ResultView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            if let target, !languages.isEmpty {
+            if !languages.isEmpty {
                 HStack(spacing: 6) {
                     LanguagePicker(title: "Source language", selection: source,
                                    languages: languages, onChange: onSource)

@@ -16,8 +16,8 @@
 ## Features
 
 - **Double ⌘C to translate.** Copy text twice quickly in any app and a small icon appears near the cursor. Nothing is translated until you click it.
-- **Smart default direction.** The source language is detected automatically; text is translated to Polish, and Polish is translated to Russian.
-- **Pick any language.** Fix a wrongly detected source language or choose another target right in the panel. The last chosen target is remembered.
+- **English by default, your choice after that.** The source language is detected automatically and text goes to English until you pick another target in the panel — from then on your choice is remembered.
+- **Fix the source.** If the source language is detected wrongly, correct it right in the panel.
 - **Stays out of the way.** Menu-bar only (no Dock icon); the panel doesn't steal focus and closes with <kbd>Esc</kbd> or a click outside.
 - **Private.** Translation happens on your Mac using downloaded Apple language models — text never leaves the device.
 - **Localized UI.** English, Russian and Polish, following the system language.
