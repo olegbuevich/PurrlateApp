@@ -1,0 +1,10 @@
+"On/Off" = "Вкл/выкл";
+"Quit" = "Выход";
+"Translate" = "Перевести";
+"Copy" = "Копировать";
+"Could not detect the language of the text." = "Не удалось определить язык текста.";
+"Translation %@ is not supported." = "Перевод %@ не поддерживается.";
+"The %@ language model is not downloaded. Download it in System Settings → General → Language & Region → Translation Languages." = "Языковая модель %@ не скачана. Скачайте её: Системные настройки → Основные → Язык и регион → Языки перевода.";
+"Unknown language model status." = "Неизвестный статус языковой модели.";
+"Translate to" = "Перевести на";
+"Source language" = "Исходный язык";

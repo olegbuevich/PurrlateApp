@@ -1,0 +1,10 @@
+"On/Off" = "On/Off";
+"Quit" = "Quit";
+"Translate" = "Translate";
+"Copy" = "Copy";
+"Could not detect the language of the text." = "Could not detect the language of the text.";
+"Translation %@ is not supported." = "Translation %@ is not supported.";
+"The %@ language model is not downloaded. Download it in System Settings → General → Language & Region → Translation Languages." = "The %@ language model is not downloaded. Download it in System Settings → General → Language & Region → Translation Languages.";
+"Unknown language model status." = "Unknown language model status.";
+"Translate to" = "Translate to";
+"Source language" = "Source language";

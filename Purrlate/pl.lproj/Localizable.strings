@@ -1,0 +1,10 @@
+"On/Off" = "Wł./wył.";
+"Quit" = "Zakończ";
+"Translate" = "Przetłumacz";
+"Copy" = "Kopiuj";
+"Could not detect the language of the text." = "Nie udało się rozpoznać języka tekstu.";
+"Translation %@ is not supported." = "Tłumaczenie %@ nie jest obsługiwane.";
+"The %@ language model is not downloaded. Download it in System Settings → General → Language & Region → Translation Languages." = "Model językowy %@ nie jest pobrany. Pobierz go w Ustawieniach systemowych → Ogólne → Język i region → Języki tłumaczenia.";
+"Unknown language model status." = "Nieznany status modelu językowego.";
+"Translate to" = "Przetłumacz na";
+"Source language" = "Język źródłowy";
